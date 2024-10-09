@@ -2,7 +2,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-# Actor Class - ResNet Model
 class BasicBlock(nn.Module):
     expansion = 1
 
@@ -93,3 +92,4 @@ class ResNet(nn.Module):
         x = F.avg_pool2d(x, 4)
         x = x.view(x.size(0), -1)
         return torch.sigmoid(self.fc(x))
+
